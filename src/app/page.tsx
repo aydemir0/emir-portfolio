@@ -6,6 +6,7 @@ import { CopyEmailButton } from "../components/CopyEmailButton";
 import Link from "next/link";
 import { ProjectFilter } from "../components/ProjectFilter";
 import { useState } from "react";
+import ContactForm from "../components/ContactForm";
 
 export default function Home() {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -345,12 +346,15 @@ export default function Home() {
             <p className="text-muted mb-8">
               I am actively looking for internships and junior opportunities where I can contribute to full-stack products.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
               <a href="https://calendar.app.google/bQPjLoWdk7Fq3bHg6" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-accent text-white font-medium rounded-md hover:bg-accent/90 transition-colors w-full sm:w-auto">
                 Book a 30-minute call
               </a>
               <CopyEmailButton email="muhammedeira@gmail.com" />
             </div>
+
+            <hr className="border-card-border mb-8" />
+            <ContactForm />
           </div>
         </section>
       </main>
