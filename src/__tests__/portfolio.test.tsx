@@ -4,10 +4,14 @@ import Home from '../app/page';
 
 describe('Portfolio Requirements', () => {
   it('TEST A - verifies main content', () => {
-    render(<Home />);
+    const { container } = render(<Home />);
     expect(screen.getAllByText(/Muhammed Emir Aydın/i).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/Computer Engineering/i).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/Hit\.AI/i).length).toBeGreaterThan(0);
+
+    // Accessibility check for SVG icons in ThemeToggle
+    const hiddenSvgs = container.querySelectorAll('svg[aria-hidden="true"]');
+    expect(hiddenSvgs.length).toBeGreaterThan(0);
   });
 
   it('TEST G - verifies hero role text from reviewer feedback', () => {

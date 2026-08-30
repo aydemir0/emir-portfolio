@@ -80,7 +80,7 @@ export function ThreeExperience() {
       <div className="p-6 bg-card border border-card-border rounded-xl shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
         
         <div className="space-y-2">
-          <h3 className="text-sm font-mono text-muted uppercase tracking-wider" id="color-group-label">Core Color</h3>
+          <h2 className="text-sm font-mono text-muted uppercase tracking-wider" id="color-group-label">Core Color</h2>
           <div className="flex gap-2" role="group" aria-labelledby="color-group-label">
             {(['blue', 'violet', 'cyan'] as CoreColor[]).map((c) => (
               <button
@@ -100,11 +100,11 @@ export function ThreeExperience() {
         </div>
 
         <div className="space-y-2 w-full sm:w-auto">
-          <h3 className="text-sm font-mono text-muted uppercase tracking-wider">Interaction</h3>
+          <h2 className="text-sm font-mono text-muted uppercase tracking-wider">Interaction</h2>
           <button
             onClick={handleEnergyClick}
             disabled={energyActive}
-            className={`w-full sm:w-auto px-6 py-2 rounded-md text-white font-medium transition-colors ${
+            className={`w-full sm:w-auto px-6 py-2 rounded-md text-white dark:text-slate-900 font-medium transition-colors ${
               energyActive ? 'bg-accent/50 cursor-not-allowed' : 'bg-accent hover:bg-accent/90'
             }`}
           >

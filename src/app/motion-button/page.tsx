@@ -44,7 +44,7 @@ export default function LifecycleButtonPage() {
               <div className="flex gap-4 justify-center">
                 <button 
                   onClick={() => setDemoOutcome("success")}
-                  className={`px-3 py-1.5 text-xs font-medium rounded transition-colors ${demoOutcome === "success" ? "bg-accent text-white" : "bg-background border border-card-border text-muted hover:text-foreground"}`}
+                  className={`px-3 py-1.5 text-xs font-medium rounded transition-colors ${demoOutcome === "success" ? "bg-accent text-white dark:text-slate-900" : "bg-background border border-card-border text-muted hover:text-foreground"}`}
                 >
                   Force Success
                 </button>

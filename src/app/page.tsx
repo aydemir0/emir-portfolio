@@ -347,7 +347,7 @@ export default function Home() {
               I am actively looking for internships and junior opportunities where I can contribute to full-stack products.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-              <a href="https://calendar.app.google/bQPjLoWdk7Fq3bHg6" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-accent text-white font-medium rounded-md hover:bg-accent/90 transition-colors w-full sm:w-auto text-center">
+              <a href="https://calendar.app.google/bQPjLoWdk7Fq3bHg6" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-accent text-white dark:text-slate-900 font-medium rounded-md hover:bg-accent/90 transition-colors w-full sm:w-auto text-center">
                 Book a 30-minute call
               </a>
               <CopyEmailButton email="muhammedeira@gmail.com" />
