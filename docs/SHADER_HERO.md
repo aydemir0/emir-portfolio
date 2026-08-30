@@ -161,7 +161,7 @@ Device pixel ratio is capped between 1 and 1.5. This matches the existing `/3d` 
 
 ## FlyRank Deliverables
 
-- **Live URL:** https://muhammed-emir-aydin.is-a.dev
+- **Live URL:** https://muhammed-emir-aydin.is-a.dev (Direct Vercel URL: https://muhammed-emir-aydin-k55mybugz-aydemir0s-projects.vercel.app)
 - **Shader source:** `src/components/shader/shader-source.ts`
 - **Fallback one-liner:** "Reduced-motion users get the same visual palette as a static CSS gradient, while the animated WebGL canvas is skipped entirely."
 - **DPR capped:** `[1, 1.5]` in `src/components/shader/ShaderCanvasInner.tsx`
