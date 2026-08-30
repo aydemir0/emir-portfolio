@@ -40,3 +40,23 @@ html {
     scroll-behavior: auto;
   }
 }
+
+/* Motion system */
+:root {
+  --motion-fast: 160ms;
+  --motion-normal: 200ms;
+  --motion-slow: 280ms;
+  --ease-out-ui: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  50% { transform: translateX(3px); }
+  75% { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
+
+@theme inline {
+  --animate-shake: shake var(--motion-slow) ease-in-out;
+}
