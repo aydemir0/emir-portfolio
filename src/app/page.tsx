@@ -144,7 +144,7 @@ export default function Home() {
                        </div>
                     </div>
                     {/* RIGHT COLUMN (Visual) */}
-                    <div className="md:w-1/2 bg-background border-l border-card-border relative overflow-hidden flex flex-col items-center justify-center p-8 min-h-[400px]">
+                    <div className="md:w-1/2 bg-background border-t md:border-t-0 md:border-l border-card-border relative overflow-hidden flex flex-col items-center justify-center p-8 min-h-[400px]">
                       {/* Abstract Visual representation */}
                       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-accent/5 via-background to-background"></div>
                       
@@ -211,7 +211,7 @@ export default function Home() {
                        </div>
                     </div>
                     {/* RIGHT COLUMN (CSS Orbit) */}
-                    <div className="md:w-1/2 bg-[#050505] border-l border-card-border relative overflow-hidden flex items-center justify-center p-8 min-h-[300px]">
+                    <div className="md:w-1/2 bg-[#050505] border-t md:border-t-0 md:border-l border-card-border relative overflow-hidden flex items-center justify-center p-8 min-h-[300px]">
                       <div data-testid="orbit-visual" aria-hidden="true" className="relative w-48 h-48 sm:w-64 sm:h-64 animate-[spin_20s_linear_infinite] motion-reduce:animate-none">
                         {/* Orbit rings */}
                         <div className="absolute inset-0 rounded-full border border-white/20"></div>
@@ -347,7 +347,7 @@ export default function Home() {
               I am actively looking for internships and junior opportunities where I can contribute to full-stack products.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-              <a href="https://calendar.app.google/bQPjLoWdk7Fq3bHg6" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-accent text-white font-medium rounded-md hover:bg-accent/90 transition-colors w-full sm:w-auto">
+              <a href="https://calendar.app.google/bQPjLoWdk7Fq3bHg6" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-accent text-white font-medium rounded-md hover:bg-accent/90 transition-colors w-full sm:w-auto text-center">
                 Book a 30-minute call
               </a>
               <CopyEmailButton email="muhammedeira@gmail.com" />
@@ -361,9 +361,9 @@ export default function Home() {
       
       {/* MOBILE ACTION STRIP */}
       <div className="md:hidden fixed bottom-0 left-0 w-full bg-background/95 backdrop-blur border-t border-card-border z-50 p-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] flex justify-around items-center" data-testid="mobile-action-strip">
-        <a href="/Muhammed-Emir-Aydin-CV.pdf" className="text-sm font-medium px-4 py-2 text-foreground hover:text-accent transition-colors">CV</a>
-        <a href="https://github.com/aydemir0" className="text-sm font-medium px-4 py-2 text-foreground hover:text-accent transition-colors">GitHub</a>
-        <a href="https://calendar.app.google/bQPjLoWdk7Fq3bHg6" className="text-sm font-medium px-4 py-2 bg-foreground text-background rounded">Book</a>
+        <a href="/Muhammed-Emir-Aydin-CV.pdf" className="text-sm font-medium px-4 py-3 text-foreground hover:text-accent transition-colors">CV</a>
+        <a href="https://github.com/aydemir0" className="text-sm font-medium px-4 py-3 text-foreground hover:text-accent transition-colors">GitHub</a>
+        <a href="https://calendar.app.google/bQPjLoWdk7Fq3bHg6" className="text-sm font-medium px-4 py-3 bg-foreground text-background rounded">Book</a>
       </div>
 
       <footer className="border-t border-card-border py-8 mt-16 mb-16 md:mb-0 relative">
@@ -372,9 +372,9 @@ export default function Home() {
             © 2026 Muhammed Emir Aydın
           </div>
           <div className="flex gap-6 text-sm">
-            <a href="/Muhammed-Emir-Aydin-CV.pdf" target="_blank" className="text-muted hover:text-foreground transition-colors">CV</a>
-            <a href="https://github.com/aydemir0" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-foreground transition-colors">GitHub</a>
-            <a href="https://www.linkedin.com/in/muhammed-emir-ayd%C4%B1n-305423200/" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-foreground transition-colors">LinkedIn</a>
+            <a href="/Muhammed-Emir-Aydin-CV.pdf" target="_blank" className="text-muted hover:text-foreground transition-colors py-2">CV</a>
+            <a href="https://github.com/aydemir0" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-foreground transition-colors py-2">GitHub</a>
+            <a href="https://www.linkedin.com/in/muhammed-emir-ayd%C4%B1n-305423200/" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-foreground transition-colors py-2">LinkedIn</a>
           </div>
         </div>
         <button 

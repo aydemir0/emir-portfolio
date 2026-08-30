@@ -18,7 +18,7 @@ export function CopyEmailButton({ email }: { email: string }) {
   return (
     <button
       onClick={handleCopy}
-      className="flex items-center gap-2 px-4 py-2 bg-card border border-card-border rounded-md hover:border-accent transition-colors"
+      className="flex items-center justify-center gap-2 px-4 py-3 bg-card border border-card-border rounded-md hover:border-accent transition-colors w-full sm:w-auto"
       aria-label="Copy email address"
     >
       <span className="text-sm font-medium text-foreground">{copied ? "Copied!" : "Copy email"}</span>
