@@ -372,6 +372,7 @@ export default function Home() {
             © 2026 Muhammed Emir Aydın
           </div>
           <div className="flex gap-6 text-sm">
+            <a href="/3d" className="text-muted hover:text-foreground transition-colors py-2">3D Experience</a>
             <a href="/Muhammed-Emir-Aydin-CV.pdf" target="_blank" className="text-muted hover:text-foreground transition-colors py-2">CV</a>
             <a href="https://github.com/aydemir0" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-foreground transition-colors py-2">GitHub</a>
             <a href="https://www.linkedin.com/in/muhammed-emir-ayd%C4%B1n-305423200/" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-foreground transition-colors py-2">LinkedIn</a>
