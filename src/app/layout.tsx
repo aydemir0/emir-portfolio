@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "../components/ThemeProvider";
+import { Analytics } from "@vercel/analytics/next";
+import { SITE_URL } from "../config/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://emir-portfolio-two.vercel.app'),
+  metadataBase: new URL(SITE_URL),
   title: "Muhammed Emir Aydın | AI-Assisted Web Products",
   description: "I build AI-assisted web products and turn ideas into working, deployed tools. Explore my projects, frontend experiments, and interactive web work.",
   alternates: {
@@ -24,7 +26,7 @@ export const metadata: Metadata = {
     title: "Muhammed Emir Aydın | AI-Assisted Web Products",
     description: "I build AI-assisted web products and turn ideas into working, deployed tools. Explore my projects, frontend experiments, and interactive web work.",
     type: "website",
-    url: "https://emir-portfolio-two.vercel.app",
+    url: SITE_URL,
     siteName: "Muhammed Emir Aydın",
   },
   twitter: {
@@ -45,6 +47,7 @@ export default function RootLayout({
         <ThemeProvider attribute="data-theme" defaultTheme="system" enableSystem>
           {children}
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );

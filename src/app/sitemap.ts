@@ -1,7 +1,8 @@
 import type { MetadataRoute } from 'next';
+import { SITE_URL } from '../config/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://emir-portfolio-two.vercel.app';
+  const baseUrl = SITE_URL;
   
   return [
     {
