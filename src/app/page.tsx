@@ -36,7 +36,7 @@ export default function Home() {
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-foreground">
             Hi, I&apos;m Emir. <br className="hidden md:block"/>
-            <span className="text-muted">I build full-stack products and integrate AI systems.</span>
+            <span className="text-muted">I build AI-assisted web products and turn ideas into working, deployed tools.</span>
           </h1>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">

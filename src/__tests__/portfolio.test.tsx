@@ -10,6 +10,11 @@ describe('Portfolio Requirements', () => {
     expect(screen.getAllByText(/Hit\.AI/i).length).toBeGreaterThan(0);
   });
 
+  it('TEST G - verifies hero role text from reviewer feedback', () => {
+    render(<Home />);
+    expect(screen.getAllByText(/I build AI-assisted web products and turn ideas into working, deployed tools\./i).length).toBeGreaterThan(0);
+  });
+
   it('TEST B - verifies required links exist', () => {
     render(<Home />);
     const linkedinLinks = screen.getAllByRole('link', { name: /linkedin/i });
