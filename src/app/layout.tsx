@@ -14,8 +14,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Muhammed Emir Aydın | Full-Stack & AI Product Developer",
-  description: "Computer Engineering student, full-stack & AI product developer building end-to-end software solutions.",
+  metadataBase: new URL('https://emir-portfolio-two.vercel.app'),
+  title: "Muhammed Emir Aydın | AI-Assisted Web Products",
+  description: "I build AI-assisted web products and turn ideas into working, deployed tools. Explore my projects, frontend experiments, and interactive web work.",
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: "Muhammed Emir Aydın | AI-Assisted Web Products",
+    description: "I build AI-assisted web products and turn ideas into working, deployed tools. Explore my projects, frontend experiments, and interactive web work.",
+    type: "website",
+    url: "https://emir-portfolio-two.vercel.app",
+    siteName: "Muhammed Emir Aydın",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Muhammed Emir Aydın | AI-Assisted Web Products",
+    description: "I build AI-assisted web products and turn ideas into working, deployed tools. Explore my projects, frontend experiments, and interactive web work.",
+  }
 };
 
 export default function RootLayout({

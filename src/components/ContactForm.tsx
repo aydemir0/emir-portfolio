@@ -70,8 +70,8 @@ export default function ContactForm() {
           type="text"
           required
           autoComplete="name"
-          minLength={2}
-          maxLength={80}
+          minLength={1}
+          maxLength={100}
           value={formData.name}
           onChange={handleChange}
           disabled={status === 'submitting'}
@@ -101,8 +101,8 @@ export default function ContactForm() {
           id="message"
           name="message"
           required
-          minLength={10}
-          maxLength={2000}
+          minLength={1}
+          maxLength={5000}
           rows={4}
           value={formData.message}
           onChange={handleChange}
