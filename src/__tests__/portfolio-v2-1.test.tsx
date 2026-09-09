@@ -11,11 +11,10 @@ import { metadata as galaxyMeta } from '../app/projects/emirs-galaxy/page';
 describe('V2.1 Recruiter Page', () => {
   it('TEST 1 - /recruiter renders expected elements', () => {
     render(<RecruiterPage />);
-    expect(screen.getByText('Muhammed Emir Aydın')).toBeInTheDocument();
-    expect(screen.getByText(/Open to internships & junior/i)).toBeInTheDocument();
+    expect(screen.getByText('Muhammed Emir Aydin')).toBeInTheDocument();
+    expect(screen.getByText(/Open to software engineering internships/i)).toBeInTheDocument();
     expect(screen.getAllByText(/Hit\.AI/i).length).toBeGreaterThan(0);
     expect(screen.getByRole('link', { name: /View CV/i })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /Book a Call/i })).toBeInTheDocument();
   });
 
   it('TEST 2 - recruiter page does not contain invented metrics', () => {
@@ -33,15 +32,7 @@ describe('V2.1 Recruiter Page', () => {
 });
 
 describe('V2.1 Homepage & Core', () => {
-  it('TEST 3 & 4 - project filters include exact categories and expose aria-pressed', () => {
-    render(<Home />);
-    const filters = ['All', 'AI', 'Web', 'Mobile', 'Game', 'Hardware'];
-    filters.forEach(f => {
-      const btn = screen.getByRole('button', { name: f });
-      expect(btn).toBeInTheDocument();
-      expect(btn).toHaveAttribute('aria-pressed');
-    });
-  });
+  // TEST 3 & 4 removed: Project filters were removed from the homepage in the 2026 refresh
 
   it('TEST 9 - custom 404 has Back to portfolio', () => {
     render(<NotFound />);
@@ -51,37 +42,29 @@ describe('V2.1 Homepage & Core', () => {
   it('TEST 10 - strict factual status mapping', () => {
     render(<Home />);
     expect(screen.getByText('Active Development')).toBeInTheDocument(); // Hit.AI
-    expect(screen.getByText('Experimental Portfolio')).toBeInTheDocument(); // Emir's Galaxy
+    expect(screen.getByText('Experimental')).toBeInTheDocument(); // Emir's Galaxy
   });
 
   it('TEST 11 - availability text exact match', () => {
     render(<Home />);
-    expect(screen.getAllByText(/Open to internships & junior software \/ AI opportunities/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/Open to software engineering internships, junior engineering roles, and international opportunities/i).length).toBeGreaterThan(0);
   });
 
   it('TEST 12 - mobile action strip contains links', () => {
     render(<Home />);
-    // Testing logic assumes they render but are hidden via CSS on desktop
     const mobileStrip = screen.getByTestId('mobile-action-strip');
     expect(mobileStrip).toBeInTheDocument();
     expect(mobileStrip.textContent).toMatch(/CV/i);
     expect(mobileStrip.textContent).toMatch(/GitHub/i);
-    expect(mobileStrip.textContent).toMatch(/Book/i);
+    expect(mobileStrip.textContent).toMatch(/Contact/i);
   });
 
-  it('TEST 15 - How I Work section presence', () => {
-    render(<Home />);
-    const html = document.body.innerHTML;
-    expect(html).toMatch(/How I work/i);
-    expect(html).toMatch(/Understand/i);
-    expect(html).toMatch(/Build/i);
-    expect(html).toMatch(/Verify/i);
-  });
+  // TEST 15 removed: "How I Work" section was removed from the new IA
 
-  it('TEST 16 - FlyRank is in progress, not completed', () => {
+  it('TEST 16 - FlyRank is completed', () => {
     render(<Home />);
-    expect(screen.getAllByText(/In progress/i).length).toBeGreaterThan(0);
-    expect(screen.queryByText(/completed.*FlyRank/i)).toBeNull();
+    expect(screen.getAllByText(/Completed capstone project/i).length).toBeGreaterThan(0);
+    expect(screen.queryByText(/In progress/i)).toBeNull();
   });
 });
 

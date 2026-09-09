@@ -70,11 +70,11 @@ describe('Contact Route API', () => {
     expect(sendMock).not.toHaveBeenCalled();
   });
 
-  test('6: short/empty message returns 400', async () => {
+  test('6: empty message or whitespace-only returns 400', async () => {
     const req = createRequest({
       name: 'John',
       email: 'john@example.com',
-      message: 'short'
+      message: '   '
     });
 
     const res = await POST(req);
@@ -82,16 +82,26 @@ describe('Contact Route API', () => {
     expect(sendMock).not.toHaveBeenCalled();
   });
 
-  test('7: message over 2000 chars returns 400', async () => {
+  test('7: message over 5000 chars returns 400', async () => {
     const req = createRequest({
       name: 'John',
       email: 'john@example.com',
-      message: 'a'.repeat(2001)
+      message: 'a'.repeat(5001)
     });
 
     const res = await POST(req);
     expect(res.status).toBe(400);
     expect(sendMock).not.toHaveBeenCalled();
+  });
+
+  test('email format variations', async () => {
+    const req1 = createRequest({ name: 'John', email: 'abc', message: 'Valid test message' });
+    const res1 = await POST(req1);
+    expect(res1.status).toBe(400);
+
+    const req2 = createRequest({ name: 'John', email: 'abc@', message: 'Valid test message' });
+    const res2 = await POST(req2);
+    expect(res2.status).toBe(400);
   });
 
   test('8: honeypot submission does NOT call Resend', async () => {

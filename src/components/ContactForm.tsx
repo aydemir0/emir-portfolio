@@ -69,8 +69,9 @@ export default function ContactForm() {
           name="name"
           type="text"
           required
-          minLength={2}
-          maxLength={80}
+          autoComplete="name"
+          minLength={1}
+          maxLength={100}
           value={formData.name}
           onChange={handleChange}
           disabled={status === 'submitting'}
@@ -85,6 +86,7 @@ export default function ContactForm() {
           name="email"
           type="email"
           required
+          autoComplete="email"
           maxLength={254}
           value={formData.email}
           onChange={handleChange}
@@ -99,8 +101,8 @@ export default function ContactForm() {
           id="message"
           name="message"
           required
-          minLength={10}
-          maxLength={2000}
+          minLength={1}
+          maxLength={5000}
           rows={4}
           value={formData.message}
           onChange={handleChange}
@@ -126,7 +128,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === 'submitting'}
-        className="mt-2 px-6 py-3 bg-accent text-white font-medium rounded-md hover:bg-accent/90 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent disabled:opacity-50"
+        className="mt-2 px-6 py-3 bg-accent text-white dark:text-slate-900 font-medium rounded-md hover:bg-accent/90 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent disabled:opacity-50"
       >
         {status === 'submitting' ? 'Sending...' : 'Send message'}
       </button>

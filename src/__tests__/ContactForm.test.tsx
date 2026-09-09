@@ -15,7 +15,9 @@ describe('ContactForm Component', () => {
   test('1: renders Name, Email, Message and Send message', () => {
     render(<ContactForm />);
     expect(screen.getByLabelText(/Name/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/Name/i)).toHaveAttribute('autoComplete', 'name');
     expect(screen.getByLabelText(/Email/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/Email/i)).toHaveAttribute('autoComplete', 'email');
     expect(screen.getByLabelText(/Message/i)).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /Send message/i })).toBeInTheDocument();
   });

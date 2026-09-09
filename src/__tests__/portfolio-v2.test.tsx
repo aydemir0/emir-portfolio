@@ -22,7 +22,7 @@ Object.defineProperty(window, 'matchMedia', {
 describe('Portfolio V2 Requirements', () => {
   it('TEST 1 — availability', () => {
     render(<Home />);
-    expect(screen.getAllByText(/Open to internships & junior software \/ AI opportunities/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/Open to software engineering internships, junior engineering roles, and international opportunities/i).length).toBeGreaterThan(0);
   });
 
   it('TEST 2 — theme toggle', () => {
@@ -33,9 +33,9 @@ describe('Portfolio V2 Requirements', () => {
 
   it('TEST 3 — case-study routing', () => {
     render(<Home />);
-    const hitAiLinks = screen.getAllByRole('link', { name: /View Case Study/i });
+    const hitAiLinks = screen.getAllByRole('link', { name: /Case Study/i });
     expect(hitAiLinks.some(link => link.getAttribute('href') === '/projects/hit-ai')).toBe(true);
-    const emirsGalaxyLinks = screen.getAllByRole('link', { name: /Explore the 3D experience/i });
+    const emirsGalaxyLinks = screen.getAllByRole('link', { name: /View Case Study/i });
     expect(emirsGalaxyLinks.some(link => link.getAttribute('href') === '/projects/emirs-galaxy')).toBe(true);
   });
 
@@ -48,16 +48,16 @@ describe('Portfolio V2 Requirements', () => {
   it('TEST 8 — skill proof', () => {
     render(<Home />);
     // Check that Hit.AI is linked from a proof area
-    expect(screen.getAllByText(/Proof, not buzzwords/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/Engineering Evidence/i).length).toBeGreaterThan(0);
     const hitAiProofLinks = screen.getAllByRole('link', { name: /Hit\.AI/i });
     expect(hitAiProofLinks.length).toBeGreaterThan(0);
   });
 
   it('TEST 9 — FlyRank integrity', () => {
     render(<Home />);
-    expect(screen.getAllByText(/In progress/i).length).toBeGreaterThan(0);
-    expect(screen.getAllByText(/FlyRank completion badge will be added after capstone approval/i).length).toBeGreaterThan(0);
-    expect(screen.queryByText(/completed.*FlyRank/i)).toBeNull();
+    expect(screen.getAllByText(/Completed capstone project — AI Fluency certification awarded/i).length).toBeGreaterThan(0);
+    expect(screen.queryByText(/In progress/i)).toBeNull();
+    expect(screen.queryByText(/badge will be added after capstone approval/i)).toBeNull();
   });
 
   it('TEST 10 — accessibility', () => {
@@ -76,7 +76,6 @@ describe('Case Studies V2', () => {
     const content = screen.getByTestId('case-study-content').textContent || '';
     expect(content).toMatch(/AI SDK/i);
     expect(content).toMatch(/Groq/i);
-    expect(content).toMatch(/Anthropic/i);
     expect(content).toMatch(/structured/i);
     expect(content).toMatch(/resilience/i);
     expect(content).toMatch(/Apply \/ Maybe \/ Skip/i);

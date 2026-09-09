@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  /* Light theme */
-  --background: #F8FAFC;
-  --foreground: #0F172A;
+  /* Light theme — warm off-white paper tone */
+  --background: #F7F6F3;
+  --foreground: #0A0C10;
   --muted: #64748B;
-  --accent: #2563EB;
+  --accent: #0055FF; /* Piercing Electric Cobalt */
   --card: #FFFFFF;
   --card-border: #E2E8F0;
 }
 
 [data-theme='dark'] {
-  /* Dark theme */
-  --background: #080B12;
-  --foreground: #FAFAFA;
-  --muted: #94A3B8;
-  --accent: #4F8CFF;
-  --card: #0B1020;
-  --card-border: #1E293B;
+  /* Dark theme — deep graphite, not blue-tinted */
+  --background: #0A0C0F;
+  --foreground: #F0F0EE;
+  --muted: #8A9AB0;
+  --accent: #3377FF; /* Bright Electric Cobalt */
+  --card: #0F1116;
+  --card-border: #1C2028;
 }
 
 @theme inline {
@@ -57,6 +57,35 @@ html {
   100% { transform: translateX(0); }
 }
 
+@keyframes flow {
+  from { stroke-dashoffset: 24; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes dash {
+  to { stroke-dashoffset: -100; }
+}
+
 @theme inline {
   --animate-shake: shake var(--motion-slow) ease-in-out;
+  --animate-flow: flow 1s linear infinite;
+  --animate-dash: dash 2s linear infinite;
+}
+
+/* Typography Utilities */
+.text-balance {
+  text-wrap: balance;
+}
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(255,255,255,0.1);
+  color: transparent;
+}
+[data-theme='light'] .text-stroke {
+  -webkit-text-stroke: 1px rgba(0,0,0,0.1);
 }

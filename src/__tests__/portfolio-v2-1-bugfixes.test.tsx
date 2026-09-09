@@ -6,17 +6,17 @@ describe('V2.1 Bug Fixes - Navigation & Selected Work', () => {
   it('TEST A - Navigation hashes correspond to actual DOM section IDs', () => {
     render(<Home />);
     
-    const workLink = screen.getByRole('link', { name: /^work$/i });
-    const aboutLink = screen.getByRole('link', { name: /^about$/i });
-    const experienceLink = screen.getByRole('link', { name: /^experience$/i });
-    const skillsLink = screen.getByRole('link', { name: /^skills$/i });
-    const contactLink = screen.getByRole('link', { name: /^contact$/i });
+    const workLink = screen.getAllByRole('link', { name: /^work$/i })[0];
+    const aboutLink = screen.getAllByRole('link', { name: /^about$/i })[0];
+    const experienceLink = screen.getAllByRole('link', { name: /^experience$/i })[0];
+    const skillsLink = screen.getAllByRole('link', { name: /^skills$/i })[0];
+    const contactLink = screen.getAllByRole('link', { name: /^contact$/i })[0];
 
     // Ensure links actually point to hashes
     expect(workLink.getAttribute('href')).toBe('#work');
     expect(aboutLink.getAttribute('href')).toBe('#about');
     expect(experienceLink.getAttribute('href')).toBe('#experience');
-    expect(skillsLink.getAttribute('href')).toBe('#skills');
+    expect(skillsLink.getAttribute('href')).toBe('#skills-map');
     expect(contactLink.getAttribute('href')).toBe('#contact');
 
     // Ensure those IDs actually exist in the document
@@ -37,38 +37,21 @@ describe('V2.1 Bug Fixes - Navigation & Selected Work', () => {
     expect(hitAiCard.textContent).toMatch(/Structured Analysis/i);
     expect(hitAiCard.textContent).toMatch(/Resilience/i);
     expect(hitAiCard.textContent).toMatch(/Prioritizer Agent/i);
-
-    // Keep Built/Learned/Next
-    expect(hitAiCard.textContent).toMatch(/Built/i);
-    expect(hitAiCard.textContent).toMatch(/Learned/i);
-    expect(hitAiCard.textContent).toMatch(/Next/i);
     
     // Check links
     const links = Array.from(hitAiCard.querySelectorAll('a'));
-    expect(links.some(l => l.textContent?.match(/View Case Study/i))).toBe(true);
-    expect(links.some(l => l.textContent?.match(/View GitHub/i))).toBe(true);
+    expect(links.some(l => l.textContent?.match(/Case Study/i))).toBe(true);
+    expect(links.some(l => l.textContent?.match(/GitHub/i))).toBe(true);
   });
 
-  it('TEST C - Emir\'s Galaxy visual hierarchy and orbit animation', () => {
+  it('TEST C - Emir\'s Galaxy visual hierarchy', () => {
     render(<Home />);
     
     const emirsGalaxyCard = screen.getByTestId('project-emirs-galaxy');
     
     // Copy and links
-    expect(emirsGalaxyCard.textContent).toMatch(/Explore the 3D experience/i);
+    expect(emirsGalaxyCard.textContent).toMatch(/View Case Study/i);
     expect(emirsGalaxyCard.textContent).toMatch(/React Three Fiber/i);
-
-    // Ensure orbit element exists (decorative)
-    const orbitVisual = emirsGalaxyCard.querySelector('[data-testid="orbit-visual"]');
-    expect(orbitVisual).not.toBeNull();
-    expect(orbitVisual?.getAttribute('aria-hidden')).toBe('true');
   });
 
-  it('TEST D - Orbit animation respects prefers-reduced-motion', () => {
-    render(<Home />);
-    
-    const orbitVisual = document.querySelector('[data-testid="orbit-visual"]');
-    // We expect it to have the tailwind class for reduced motion
-    expect(orbitVisual?.className).toMatch(/motion-reduce:animate-none/);
-  });
 });

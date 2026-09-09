@@ -32,8 +32,8 @@ export async function POST(request: Request) {
     }
 
     // Validation
-    if (!name || name.length < 2 || name.length > 80) {
-      return NextResponse.json({ error: 'Name must be between 2 and 80 characters' }, { status: 400 });
+    if (!name || name.length < 1 || name.length > 100) {
+      return NextResponse.json({ error: 'Name must be between 1 and 100 characters' }, { status: 400 });
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -41,8 +41,8 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Valid email is required (max 254 characters)' }, { status: 400 });
     }
 
-    if (!message || message.length < 10 || message.length > 2000) {
-      return NextResponse.json({ error: 'Message must be between 10 and 2000 characters' }, { status: 400 });
+    if (!message || message.length < 1 || message.length > 5000) {
+      return NextResponse.json({ error: 'Message must be between 1 and 5000 characters' }, { status: 400 });
     }
 
     const resend = new Resend(RESEND_API_KEY);
