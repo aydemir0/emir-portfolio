@@ -4,9 +4,18 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ThemeToggle } from "./ThemeToggle";
 
-const SECTIONS = ["work", "about", "experience", "skills", "contact"];
+const SECTIONS = ["work", "experience", "skills-map", "beyond", "about", "contact"];
 
-export function Navbar({ compactCtaHref }: { compactCtaHref: string }) {
+const SECTION_LABELS: Record<string, string> = {
+  work: "Work",
+  experience: "Experience",
+  "skills-map": "Skills",
+  beyond: "Community",
+  about: "About",
+  contact: "Contact",
+};
+
+export function Navbar() {
   const [active, setActive] = useState<string>("");
 
   useEffect(() => {
@@ -14,7 +23,6 @@ export function Navbar({ compactCtaHref }: { compactCtaHref: string }) {
       (entries) => {
         const visibleSections = entries.filter((entry) => entry.isIntersecting);
         if (visibleSections.length > 0) {
-          // Sort by visibility ratio or just take the first one
           setActive(visibleSections[0].target.id);
         }
       },
@@ -30,32 +38,32 @@ export function Navbar({ compactCtaHref }: { compactCtaHref: string }) {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-background/80 border-b border-card-border">
-      <div className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="font-semibold tracking-tight text-foreground hover:text-accent transition-colors">
-          Muhammed Emir
+    <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-background/90 border-b border-card-border text-foreground">
+      <div className="mx-auto max-w-[90rem] px-5 md:px-12 h-16 flex items-center justify-between">
+        <Link href="/" className="font-mono font-semibold tracking-[0.14em] text-foreground hover:text-accent transition-colors text-[11px]">
+          MEA / 2026
         </Link>
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-muted">
+        <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-6 text-[11px] font-mono tracking-[0.08em] uppercase text-muted">
           {SECTIONS.map((s) => (
             <Link
               key={s}
-              href={`#${s}`}
-              className={`transition-colors capitalize ${active === s ? "text-accent" : "hover:text-foreground"}`}
+              href={"#" + s}
+              className={"transition-colors " + (active === s ? "text-accent" : "hover:text-foreground")}
               aria-current={active === s ? "page" : undefined}
             >
-              {s}
+              {SECTION_LABELS[s]}
             </Link>
           ))}
         </nav>
         <div className="flex items-center gap-4">
           <ThemeToggle />
           <a
-            href={compactCtaHref}
+            href="/Muhammed-Emir-Aydin-CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-block text-sm font-medium text-accent hover:text-foreground transition-colors"
+            className="hidden sm:inline-block text-[11px] font-mono tracking-[0.08em] text-muted hover:text-foreground transition-colors border border-card-border px-3 py-2 hover:border-accent"
           >
-            Book a Call
+            Resume
           </a>
         </div>
       </div>

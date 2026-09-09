@@ -46,17 +46,17 @@ export const caseStudies: CaseStudyData[] = [
     problem: "Career tools often give generic advice and opaque scores, leaving candidates guessing why they weren't matched.",
     goal: "Build an evidence-based AI career assistant that can analyze structured career information reliably and provide useful UI states.",
     architecture: {
-      description: "Server-side provider selection routes requests to the appropriate AI model, which uses typed tools to return structured data rendered as Generative UI.",
+      description: "Server-side route handler receives user input and passes it through the Vercel AI SDK to Groq. Typed tool schemas define the output contract, which the model fills and the server returns as structured data rendered as Generative UI.",
       flow: [
-        "Candidate / Job Posting",
-        "Next.js Server",
-        "AI Provider Selection",
-        "Groq / Anthropic / Demo",
-        "AI SDK Tools",
-        "Structured Result",
-        "UI"
+        "User Input / Job Posting",
+        "Next.js Server Action",
+        "Vercel AI SDK",
+        "Groq",
+        "Tool Execution",
+        "Structured Output",
+        "Generative UI"
       ],
-      providers: ["Groq", "Anthropic", "Demo fallback"]
+      providers: ["Groq (primary)", "Demo fallback"]
     },
     features: [
       {

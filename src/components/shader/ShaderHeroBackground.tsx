@@ -7,7 +7,7 @@ import { shaderUniforms } from './ShaderPlane';
 // Static CSS gradient that matches the blue/violet/cyan palette of the shader.
 // Used for: prefers-reduced-motion, WebGL failure, and pre-mount.
 const STATIC_GRADIENT_CLASS =
-  'absolute inset-0 bg-gradient-to-br from-[#080B12] via-[#1a1040] to-[#081830]';
+  'absolute inset-0 bg-gradient-to-br from-[#0A0C0F] via-[#0F1218] to-[#0C1020]';
 
 // Dynamically import the Canvas to keep the R3F bundle out of the SSR path.
 // Matches the existing next/dynamic pattern used by ThreeCanvas in ThreeExperience.

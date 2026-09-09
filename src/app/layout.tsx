@@ -17,22 +17,22 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Muhammed Emir Aydın | AI-Assisted Web Products",
-  description: "I build AI-assisted web products and turn ideas into working, deployed tools. Explore my projects, frontend experiments, and interactive web work.",
+  title: "Muhammed Emir Aydın | AI & Full-Stack Engineer",
+  description: "4th-year Computer Engineering student at Kütahya Dumlupınar University. Builds end-to-end AI, web, and mobile systems. Founder of Nef Ajans. Selected engineering work and case studies.",
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: "Muhammed Emir Aydın | AI-Assisted Web Products",
-    description: "I build AI-assisted web products and turn ideas into working, deployed tools. Explore my projects, frontend experiments, and interactive web work.",
+    title: "Muhammed Emir Aydın | AI & Full-Stack Engineer",
+    description: "4th-year Computer Engineering student at Kütahya Dumlupınar University. Builds end-to-end AI, web, and mobile systems.",
     type: "website",
     url: SITE_URL,
     siteName: "Muhammed Emir Aydın",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Muhammed Emir Aydın | AI-Assisted Web Products",
-    description: "I build AI-assisted web products and turn ideas into working, deployed tools. Explore my projects, frontend experiments, and interactive web work.",
+    title: "Muhammed Emir Aydın | AI & Full-Stack Engineer",
+    description: "4th-year Computer Engineering student at Kütahya Dumlupınar University. Builds end-to-end AI, web, and mobile systems.",
   }
 };
 
@@ -44,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} antialiased h-full`} suppressHydrationWarning>
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans selection:bg-accent/30 selection:text-foreground">
-        <ThemeProvider attribute="data-theme" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem={false}>
           {children}
         </ThemeProvider>
         <Analytics />

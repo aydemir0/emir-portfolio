@@ -147,18 +147,18 @@ describe('Homepage hero with ShaderHeroBackground', () => {
     await act(async () => {
       render(<Home />);
     });
-    // The heading contains "Hi, I'm Emir."
+    // The heading contains "Muhammed Emir Aydin"
     const h1 = screen.getByRole('heading', { level: 1 });
     expect(h1).toBeInTheDocument();
-    expect(h1.textContent).toMatch(/Hi, I.m Emir/i);
+    expect(h1.textContent).toMatch(/Muhammed Emir/i);
   });
 
   it('hero CTA links are still present and clickable', async () => {
     await act(async () => {
       render(<Home />);
     });
-    const bookLinks = screen.getAllByRole('link', { name: /book a call/i });
-    expect(bookLinks.length).toBeGreaterThan(0);
+    const contactLinks = screen.getAllByRole('link', { name: /contact/i });
+    expect(contactLinks.length).toBeGreaterThan(0);
   });
 
   it('shader background is not a semantic element (decorative)', async () => {

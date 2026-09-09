@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
-export const alt = 'Muhammed Emir Aydın - AI-Assisted Web Products';
+export const alt = 'Muhammed Emir Aydın - AI & Full-Stack Engineer';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -16,9 +16,9 @@ export default async function Image() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: '#080B12',
+          backgroundColor: '#0A0C0F',
           fontFamily: 'sans-serif',
-          color: '#FAFAFA',
+          color: '#F0F0EE',
           padding: '40px',
         }}
       >
@@ -29,10 +29,10 @@ export default async function Image() {
             alignItems: 'center',
             justifyContent: 'center',
             textAlign: 'center',
-            border: '2px solid #1E293B',
+            border: '2px solid #1C2028',
             borderRadius: '16px',
             padding: '60px',
-            backgroundColor: '#0B1020',
+            backgroundColor: '#0F1116',
           }}
         >
           <div
@@ -40,7 +40,7 @@ export default async function Image() {
               fontSize: 64,
               fontWeight: 800,
               marginBottom: 16,
-              color: '#FAFAFA',
+              color: '#F0F0EE',
             }}
           >
             Muhammed Emir Aydın
@@ -50,18 +50,18 @@ export default async function Image() {
               fontSize: 48,
               fontWeight: 600,
               marginBottom: 32,
-              color: '#4F8CFF',
+              color: '#3B82F6',
             }}
           >
-            AI-Assisted Web Products
+            AI & Full-Stack Engineer
           </div>
           <div
             style={{
               fontSize: 32,
-              color: '#94A3B8',
+              color: '#8A9AB0',
             }}
           >
-            Ideas → Working, Deployed Tools
+            AI · Web · Mobile · Systems
           </div>
         </div>
       </div>
