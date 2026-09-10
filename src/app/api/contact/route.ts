@@ -48,7 +48,7 @@ export async function POST(request: Request) {
     const resend = new Resend(RESEND_API_KEY);
 
     const { error } = await resend.emails.send({
-      from: 'onboarding@resend.dev',
+      from: 'Muhammed Emir Aydin <contact@muhammed-emir-aydin.is-a.dev>',
       to: CONTACT_TO_EMAIL,
       replyTo: email,
       subject: `Portfolio contact from ${name}`,
