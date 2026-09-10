@@ -10,21 +10,21 @@ export const community: CommunityEntry[] = [
   {
     organization: "AIESEC",
     role: "Media Responsibility",
-    description: "Managed media and communications for university AIESEC chapter.",
+    description: "Managed chapter media and communications.",
   },
   {
     organization: "English Club",
     role: "Assistant Leader",
-    description: "Supported club operations, event organization, and member engagement.",
+    description: "Supported events, operations, and member engagement.",
   },
   {
     organization: "Erasmus Club",
     role: "Assistant Leader",
-    description: "Assisted with coordination of Erasmus program activities and international student engagement.",
+    description: "Coordinated program activities and international engagement.",
   },
   {
     organization: "Animal Husbandry Community",
     role: "Event & Leadership Responsibility",
-    description: "Organized and led community events and activities.",
+    description: "Organized and led community events.",
   },
 ];

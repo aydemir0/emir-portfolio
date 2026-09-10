@@ -159,7 +159,7 @@ export default function Home() {
               <p className={styles.eyebrow}>01 / FLAGSHIP PROJECT</p>
               <h2>APPLIED AI<br />ENGINEERING</h2>
               <p>
-                Engineering Evidence, not claims. A resilient AI career product built around typed outputs, observable failure states, and useful decisions.
+                Engineering Evidence over claims: a resilient AI career product built around typed outputs, observable failures, and useful decisions.
               </p>
             </div>
 
@@ -168,7 +168,7 @@ export default function Home() {
                 <div className={styles.statusLine}><span>HIT.AI</span><span>Active Development</span></div>
                 <h3>Career intelligence that explains its work.</h3>
                 <p>
-                  Streaming chat, structured job-posting analysis, tool-driven workflows, validation, failure handling, and evidence-based Apply / Maybe / Skip prioritization.
+                  Streaming analysis, tool-driven workflows, validation, failure handling, and evidence-based Apply / Maybe / Skip decisions.
                 </p>
                 <ul className={styles.capabilityList}>
                   {hitCapabilities.map((capability) => <li key={capability}>{capability}</li>)}
@@ -217,7 +217,7 @@ export default function Home() {
               <div className={styles.codexCopy}>
                 <div className={styles.codexStatus}><span>OPEN SOURCE / AI ENGINEERING TOOLING</span><strong>v0.1 PREVIEW</strong></div>
                 <h3>CODEX<br />ENGINEERING KIT</h3>
-                <p>A public engineering toolkit that turns planning, architecture, testing, review, verification, evals, and release readiness into explicit, inspectable workflows.</p>
+                <p>A public toolkit for inspectable planning, architecture, verification, evals, and release readiness.</p>
                 <div className={styles.codexMeta}><span>WINDOWS / POWERSHELL-FIRST</span><span>INDEPENDENT COMMUNITY PROJECT</span></div>
                 <div className={styles.inlineActions}>
                   <ActionLink href="https://github.com/aydemir0/codex-engineering-kit" primary>GITHUB REPOSITORY</ActionLink>
@@ -258,7 +258,7 @@ export default function Home() {
                 <p className={styles.projectNumber}>02.2 / CINEMATIC GAME SYSTEM</p>
                 <h3>MASTER OF<br />THE SANDS</h3>
                 <p>
-                  A dark desert decision game with dynamic consequences, character-driven encounters, cinematic transitions, and an authored soundscape.
+                  A cinematic desert decision game with branching consequences and an authored soundscape.
                 </p>
                 <div className={styles.stackLine}>UNITY / C# / ELEVENLABS</div>
                 <div className={styles.inlineActions}>
@@ -272,7 +272,7 @@ export default function Home() {
               <div className={styles.projectCopy}>
                 <p className={styles.projectNumber}>02.3 / MOBILE PRODUCT</p>
                 <h3>CAMPUS SOCIAL<br />&amp; YOUTH NETWORK</h3>
-                <p>A campus-focused social mobile application for student events, community feeds, and peer connection.</p>
+                <p>A campus social app for events, community feeds, and student connection.</p>
                 <div className={styles.stackLine}>FLUTTER / FIREBASE</div>
                 <span className={styles.privateBadge}>PRIVATE REPOSITORY</span>
               </div>
@@ -303,7 +303,7 @@ export default function Home() {
                 <p className={styles.projectNumber}>02.4 / REAL CLIENT DELIVERY</p>
                 <h3>ADA TARIM</h3>
                 <p>
-                  A production website delivered through Nef Ajans with ownership across architecture, implementation, SEO foundations, and deployment.
+                  A production website delivered through Nef Ajans, covering architecture, implementation, SEO, and deployment.
                 </p>
                 <div className={styles.deliveryStamp}><span>DELIVERED VIA</span><strong>NEF AJANS</strong></div>
                 <ActionLink href="https://adatarim.com" primary>LIVE WEBSITE</ActionLink>
@@ -323,7 +323,7 @@ export default function Home() {
               <div className={styles.projectCopy}>
                 <p className={styles.projectNumber}>02.5 / SPATIAL WEB EXPERIENCE</p>
                 <h3>EMIR’S<br />GALAXY</h3>
-                <p>A separate interactive 3D portfolio built around spatial navigation, capability detection, and WebGL fallbacks.</p>
+                <p>An interactive 3D portfolio with spatial navigation, capability detection, and WebGL fallbacks.</p>
                 <div className={styles.stackLine}>REACT THREE FIBER / THREE.JS / WEBGL</div>
                 <span className={styles.experimentalBadge}>Experimental</span>
                 <div className={styles.inlineActions}>
@@ -426,7 +426,7 @@ export default function Home() {
             <div className={styles.sectionHeading}>
               <p className={styles.eyebrow}>05 / COMMUNITY &amp; LEADERSHIP</p>
               <h2>BEYOND<br />THE CODE</h2>
-              <p>Engineering is also communication, organization, and bringing people into the same room.</p>
+              <p>Leadership through communication, organization, and shared momentum.</p>
             </div>
 
             <div className={styles.communityStrip} aria-label="Community organizations">
